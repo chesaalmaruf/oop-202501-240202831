@@ -104,8 +104,9 @@ public class HelloFunctional {
 
 ## Analisis
 (
-- Jelaskan bagaimana kode berjalan.  
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
+- Dalam pemrograman prosedural, kode dijalankan secara berurutan dari atas ke bawah melalui fungsi-fungsi yang dipanggil secara eksplisit; sedangkan dalam OOP (Object-Oriented Programming), kode berjalan dengan cara membuat objek dari kelas lalu mengeksekusi method pada objek tersebut untuk merepresentasikan perilaku; sementara dalam pemrograman fungsional, data diproses melalui aliran fungsi murni (seperti map, filter, reduce) secara deklaratif, sehingga fokusnya bukan pada langkah demi langkah, melainkan pada apa yang ingin dicapai dari transformasi data. 
+
+-Memahami 
 - Kendala yang dihadapi dan cara mengatasinya.  
 )
 ---
