@@ -128,22 +128,19 @@ Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur 
    3. Saat menghindari efek samping (mutasi data), misalnya dalam sistem paralel/konkuren.
  
 
-3. Bagaimana paradigma (prosedural, OOP, fungsional)
-memengaruhi maintainability dan scalability aplikasi? 
+3. Bagaimana paradigma (prosedural, OOP, fungsional) memengaruhi maintainability dan scalability aplikasi? 
    **Jawaban:**
   1.  Prosedural → mudah dipahami di awal, tapi sulit di-maintain bila program membesar (karena kode bercampur).
   2.  OOP → lebih mudah di-maintain dan di-scale karena ada struktur class/objek yang modular.
   3.  Fungsional → maintainability tinggi untuk logika data karena kode singkat, minim side-effect, cocok untuk scalable data processing
 
-4.  Mengapa OOP lebih cocok untuk mengembangkan
-aplikasi POS dibanding prosedural?
+4. Mengapa OOP lebih cocok untuk mengembangkan aplikasi POS dibanding prosedural?
 **Jawaban**
    1. POS (Point of Sale) punya banyak entitas: produk, pelanggan, transaksi, kasir.
    2. OOP memudahkan dengan membuat class untuk tiap entitas → kode lebih terorganisir.
    3. Mendukung reusability (class bisa digunakan ulang), dan extensibility (fitur baru bisa ditambah tanpa merombak besar-besaran).
       
-5. Bagaimana paradigma fungsional dapat membantu
-mengurangi kode berulang (boilerplate code)?
+5. Bagaimana paradigma fungsional dapat membantu mengurangi kode berulang (boilerplate code)?
 **Jawaban**
    1. Dengan higher-order function (fungsi bisa dipakai ulang & dipassing ke fungsi lain).
    2. Dengan lambda expression → kode lebih ringkas.
