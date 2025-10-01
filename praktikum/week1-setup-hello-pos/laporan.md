@@ -2,25 +2,20 @@
 Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 
 ## Identitas
-- Nama  : [Nama Mahasiswa]
-- NIM   : [NIM Mahasiswa]
-- Kelas : [Kelas]
+- Nama  : CHESA SALSABIL AL'MA'RUF
+- NIM   : 240202831
+- Kelas : 3IKRA
 
 ---
 
 ## Tujuan
-(Tuliskan tujuan praktikum minggu ini.  
-Contoh: *Mahasiswa memahami konsep class dan object serta dapat membuat class Produk dengan enkapsulasi.*)
+Memahami serta mampu menjelaskan paradigma pemrograman(prosedural, OOP, functional) serta mendemonstrasikan perbedaan implementasinya dalam program sederhan
 
 ---
 
 ## Dasar Teori
-(Tuliskan ringkasan teori singkat (3–5 poin) yang mendasari praktikum.  
-Contoh:  
-1. Class adalah blueprint dari objek.  
-2. Object adalah instansiasi dari class.  
-3. Enkapsulasi digunakan untuk menyembunyikan data.)
-
+1.Class (Kelas), Cetak biru (blueprint) untuk membuat objek. Berisi atribut (data/variabel) dan method (perilaku)
+2. Method, Fungsi yang berada di dalam kelas. Menjelaskan perilaku objek. Ada instance method (butuh objek) & static method (bisa dipanggil langsung).
 ---
 
 ## Langkah Praktikum
