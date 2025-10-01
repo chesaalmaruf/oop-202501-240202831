@@ -30,9 +30,68 @@ Memahami serta mampu menjelaskan paradigma pemrograman(prosedural, OOP, function
 (Tuliskan kode utama yang dibuat, contoh:  
 
 ```java
-// Contoh
-Produk p1 = new Produk("BNH-001", "Benih Padi", 25000, 100);
-System.out.println(p1.getNama());
+// HelloOOP.java
+class Produk {
+   String nama;
+   int harga;
+   Produk(String nama, int harga) {
+      this.nama = nama;
+      this.harga = harga;
+   }
+}
+
+public class hellworlOOP {
+   public static void main(String[] args) {
+      String nim = "240202831";
+      String namaMhs = " Chesa Salsabil Al'ma'ruf";
+      Produk[] daftar = {
+         new Produk("Beras", 10000),
+         new Produk("Pupuk", 15000),
+         new Produk("Benih", 12000)
+      };
+      int total = 0;
+      System.out.println("Hello POS World");
+      System.out.println("NIM: " + nim + ", Nama: " + namaMhs);
+      System.out.println("Daftar Produk:");
+      for (Produk p : daftar) {
+         System.out.println("- " + p.nama + ": " + p.harga);
+         total += p.harga;
+      }
+      System.out.println("Total harga semua produk: " + total);
+   }
+}
+```
+procedural
+```
+public class helloprosedural {
+    public static void main(String[] args) {
+        String nim = "240202831";
+        String nama = " chesa salsabil al'ma'ruf" ;
+
+        System.out.println("hello POS world, i'm  " + nama + "nim " + nim);
+}
+}
+```
+functional
+```
+// HelloFunctional.java
+import java.util.*;
+import java.util.stream.*;
+public class HelloFunctional {
+   public static void main(String[] args) {
+      String nim = "2310112345";
+      String nama = "Budi";
+      List<String> produk = Arrays.asList("Beras", "Pupuk", "Benih");
+      List<Integer> harga = Arrays.asList(10000, 15000, 12000);
+      System.out.println("Hello POS World");
+      System.out.println("NIM: " + nim + ", Nama: " + nama);
+      System.out.println("Daftar Produk:");
+      IntStream.range(0, produk.size())
+         .forEach(i -> System.out.println("- " + produk.get(i) + ": " + harga.get(i)));
+      int total = harga.stream().mapToInt(Integer::intValue).sum();
+      System.out.println("Total harga semua produk: " + total);
+   }
+}
 ```
 )
 ---
