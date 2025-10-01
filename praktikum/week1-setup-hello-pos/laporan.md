@@ -27,7 +27,7 @@ Memahami serta mampu menjelaskan paradigma pemrograman(prosedural, OOP, function
 ---
 
 ## Kode Program
-(Tuliskan kode utama yang dibuat, contoh:  
+
 
 ```java
 // HelloOOP.java
@@ -62,7 +62,7 @@ public class hellworlOOP {
 }
 ```
 procedural
-```
+```java
 public class helloprosedural {
     public static void main(String[] args) {
         String nim = "240202831";
@@ -73,7 +73,7 @@ public class helloprosedural {
 }
 ```
 functional
-```
+```java
 // HelloFunctional.java
 import java.util.*;
 import java.util.stream.*;
