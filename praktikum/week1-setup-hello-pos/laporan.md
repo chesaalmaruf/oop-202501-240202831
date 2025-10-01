@@ -93,7 +93,7 @@ public class HelloFunctional {
    }
 }
 ```
-)
+
 ---
 
 ## Hasil Eksekusi
@@ -103,12 +103,12 @@ public class HelloFunctional {
 ---
 
 ## Analisis
-(
+
 - Dalam pemrograman prosedural, kode dijalankan secara berurutan dari atas ke bawah melalui fungsi-fungsi yang dipanggil secara eksplisit; sedangkan dalam OOP (Object-Oriented Programming), kode berjalan dengan cara membuat objek dari kelas lalu mengeksekusi method pada objek tersebut untuk merepresentasikan perilaku; sementara dalam pemrograman fungsional, data diproses melalui aliran fungsi murni (seperti map, filter, reduce) secara deklaratif, sehingga fokusnya bukan pada langkah demi langkah, melainkan pada apa yang ingin dicapai dari transformasi data. 
 
--Memahami 
-- Kendala yang dihadapi dan cara mengatasinya.  
-)
+
+- Kendala yang dihadapi dan cara mengatasinya. kendala dalam indtalasi JDK dikarnakan dikarnakan visual studio code tidak menemukan lokasi file JDK, dan perlu instalasi ulang jdk
+
 ---
 
 ## Kesimpulan
