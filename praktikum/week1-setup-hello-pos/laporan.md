@@ -1,5 +1,5 @@
 # Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
-Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
+Topik: MEMAHAMI PRADIGMA PEMROGRAMAN 
 
 ## Identitas
 - Nama  : CHESA SALSABIL AL'MA'RUF
