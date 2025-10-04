@@ -97,8 +97,19 @@ public class HelloFunctional {
 ---
 
 ## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
+1. Setiap paradigma pemrograman memiliki kelebihan dan kekurangan masing- masing:
+
+      -Prosedural mudah dipahami untuk program kecil, tetapi sulit di maintain jika program semakin besar.
+
+      -OOP lebih terstruktur karena menggunakan konsep class dan object, sehingga program lebih modular, mudah dikembangkan, serta cocok untuk aplikasi berskala besar.
+
+      -Fungsional meminimalkan side-effect, mendukung penulisan kode ringkas, dan sangat berguna dalam pemrosesan data paralel maupun berskala besar.
+
+2. Dengan mempraktikkan ketiga paradigma, mahasiswa dapat memahami perbedaan cara berpikir dalam menyusun program serta memilih pendekatan yang tepat sesuai kebutuhan.
+
+3. Kendala teknis yang muncul (seperti instalasi JDK dan konfigurasi di VS Code) dapat diatasi dengan instalasi ulang dan pengaturan ulang environment, sehingga proses praktikum dapat berjalan dengan lancar.
+
+4. Secara keseluruhan, praktikum ini membantu mahasiswa untuk memahami dasar dari paradigma pemrograman serta penerapannya melalui contoh sederhana, sehingga menjadi pondasi untuk mengembangkan program yang lebih kompleks di pertemuan berikutnya.
 
 ---
 
