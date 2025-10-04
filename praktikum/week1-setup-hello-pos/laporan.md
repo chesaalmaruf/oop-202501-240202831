@@ -64,23 +64,19 @@ public class helloprosedural {
 functional
 ```java
 // HelloFunctional.java
-import java.util.*;
-import java.util.stream.*;
+import java.util.function.BiConsumer;
+
 public class HelloFunctional {
-   public static void main(String[] args) {
-      String nim = "2310112345";
-      String nama = "Budi";
-      List<String> produk = Arrays.asList("Beras", "Pupuk", "Benih");
-      List<Integer> harga = Arrays.asList(10000, 15000, 12000);
-      System.out.println("Hello POS World");
-      System.out.println("NIM: " + nim + ", Nama: " + nama);
-      System.out.println("Daftar Produk:");
-      IntStream.range(0, produk.size())
-         .forEach(i -> System.out.println("- " + produk.get(i) + ": " + harga.get(i)));
-      int total = harga.stream().mapToInt(Integer::intValue).sum();
-      System.out.println("Total harga semua produk: " + total);
-   }
+    public static void main(String[] args) {
+        // BiConsumer menerima 2 parameter (nama, nim) dan melakukan aksi (print)
+        BiConsumer<String, Integer> printHello = (nama, nim) -> 
+            System.out.println("Hello World, saya " + nama + " dengan NIM: " + nim);
+
+        // Panggil fungsi
+        printHello.accept("Chesa Salsabil Al Ma'ruf", 240202831);
+    }
 }
+
 ```
 
 ---
