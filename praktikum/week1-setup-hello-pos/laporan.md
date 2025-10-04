@@ -99,11 +99,11 @@ public class HelloFunctional {
 ## Kesimpulan
 1. Setiap paradigma pemrograman memiliki kelebihan dan kekurangan masing- masing:
 
-      -Prosedural mudah dipahami untuk program kecil, tetapi sulit di maintain jika program semakin besar.
+      - Prosedural mudah dipahami untuk program kecil, tetapi sulit di maintain jika program semakin besar.
 
-      -OOP lebih terstruktur karena menggunakan konsep class dan object, sehingga program lebih modular, mudah dikembangkan, serta cocok untuk aplikasi berskala besar.
+      - OOP lebih terstruktur karena menggunakan konsep class dan object, sehingga program lebih modular, mudah dikembangkan, serta cocok untuk aplikasi berskala besar.
 
-      -Fungsional meminimalkan side-effect, mendukung penulisan kode ringkas, dan sangat berguna dalam pemrosesan data paralel maupun berskala besar.
+      - Fungsional meminimalkan side-effect, mendukung penulisan kode ringkas, dan sangat berguna dalam pemrosesan data paralel maupun berskala besar.
 
 2. Dengan mempraktikkan ketiga paradigma, mahasiswa dapat memahami perbedaan cara berpikir dalam menyusun program serta memilih pendekatan yang tepat sesuai kebutuhan.
 
