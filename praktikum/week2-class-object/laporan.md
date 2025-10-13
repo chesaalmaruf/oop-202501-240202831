@@ -119,9 +119,7 @@ public class CreditBy {
 ---
 
 ## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
+praktikum/week2-class-object/screenshots/image.png
 ---
 
 ## Analisis
