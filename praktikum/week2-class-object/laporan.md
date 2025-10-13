@@ -119,7 +119,8 @@ public class CreditBy {
 ---
 
 ## Hasil Eksekusi
-praktikum/week2-class-object/screenshots/image.png
+<img width="1366" height="768" alt="Screenshot 2025-10-13 214240" src="https://github.com/user-attachments/assets/56a6e363-d2df-402a-980e-172fdcdd767a" />
+
 ---
 
 ## Analisis
