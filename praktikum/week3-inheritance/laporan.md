@@ -171,7 +171,7 @@ public class MainInheritance {
 ---
 
 ## Hasil Eksekusi
-![alt text](<Screenshot 2025-10-22 142256.png>)
+![alt text](https://github.com/chesaalmaruf/oop-202501-240202831/blob/main/praktikum/week3-inheritance/screenshots/Screenshot%202025-10-22%20142256.png)
 
 output
 :
