@@ -160,7 +160,7 @@ PS C:\Users\LENOVO\Downloads\oop>
 
 ```
 
-![Screenshot hasil](screenshots/hasil.png)
+![Screenshot hasil](https://github.com/chesaalmaruf/oop-202501-240202831/blob/main/praktikum/week5-abstraction-interface/screenshots/image.png)
 
 ---
 
