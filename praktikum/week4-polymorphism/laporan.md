@@ -39,7 +39,7 @@ Topik: Polymorphism (Info Produk)
 
 ### Produk.java
 ```java
-package com.upb.agripos.model;
+package main.java.com.upb.agripos.model;
 
 public class Produk {
     private String kode;
@@ -70,7 +70,7 @@ public class Produk {
 ```
 Benih.java
 ```java
-package com.upb.agripos.model;
+package main.java.com.upb.agripos.model;
 
 public class Benih extends Produk {
     private String varietas;
@@ -87,7 +87,7 @@ public class Benih extends Produk {
 }
 Pupuk.java
 ```java
-package com.upb.agripos.model;
+package main.java.com.upb.agripos.model;
 
 public class Pupuk extends Produk {
     private String jenis;
@@ -105,7 +105,7 @@ public class Pupuk extends Produk {
 ```
 AlatPertanian.java
 ```java
-package com.upb.agripos.model;
+package main.java.com.upb.agripos.model;
 
 public class AlatPertanian extends Produk {
     private String bahan;
@@ -123,10 +123,10 @@ public class AlatPertanian extends Produk {
 ```
 MainPolymorphism.java
 ```java
-package com.upb.agripos;
+package main.java.com.upb.agripos;
 
-import com.upb.agripos.model.*;
-import com.upb.agripos.util.CreditBy;
+import main.java.com.upb.agripos.model.*;
+import main.java.com.upb.agripos.util.CreditBy;
 
 public class MainPolymorphism {
     public static void main(String[] args) {
@@ -146,8 +146,7 @@ public class MainPolymorphism {
 ```
 ---
 hasil eksekusi
-
-ss
+! (https://github.com/chesaalmaruf/oop-202501-240202831/blob/main/praktikum/week4-polymorphism/screenshots/image.png)
 
 ```
 Benih: Produk: Benih Padi IR64 (Kode: BNH-001), Varietas: IR64
