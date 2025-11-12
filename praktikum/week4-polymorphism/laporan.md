@@ -146,7 +146,8 @@ public class MainPolymorphism {
 ```
 ---
 hasil eksekusi
-! (https://github.com/chesaalmaruf/oop-202501-240202831/blob/main/praktikum/week4-polymorphism/screenshots/image.png)
+
+![Screenshot hasil] (https://github.com/chesaalmaruf/oop-202501-240202831/blob/main/praktikum/week4-polymorphism/screenshots/image.png)
 
 ```
 Benih: Produk: Benih Padi IR64 (Kode: BNH-001), Varietas: IR64
