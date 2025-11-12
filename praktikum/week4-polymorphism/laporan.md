@@ -2,9 +2,9 @@
 Topik: Polymorphism (Info Produk)
 
 ## Identitas
-- Nama  : [Nama Mahasiswa]
-- NIM   : [NIM Mahasiswa]
-- Kelas : [Kelas]
+- Nama  : chesa salsabil al'ma'ruf
+- NIM   : 240202831
+- Kelas : 3IKRA
 
 ---
 
@@ -147,7 +147,7 @@ public class MainPolymorphism {
 ---
 hasil eksekusi
 
-![Screenshot hasil] (https://github.com/chesaalmaruf/oop-202501-240202831/blob/main/praktikum/week4-polymorphism/screenshots/image.png)
+![Screenshot hasil](https://github.com/chesaalmaruf/oop-202501-240202831/blob/main/praktikum/week4-polymorphism/screenshots/image.png)
 
 ```
 Benih: Produk: Benih Padi IR64 (Kode: BNH-001), Varietas: IR64
