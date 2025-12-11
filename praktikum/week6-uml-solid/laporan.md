@@ -1,73 +1,168 @@
-# Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
-Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
+# Laporan Praktikum Minggu 6
+
+Topik: Desain Arsitektur Sistem Agri-POS menggunakan UML dan Prinsip SOLID
 
 ## Identitas
-- Nama  : [Nama Mahasiswa]
-- NIM   : [NIM Mahasiswa]
-- Kelas : [Kelas]
+
+- Nama  : chesa salsabil al'ama'ruf
+- NIM   : 240202831
+- Kelas : 3ikra
 
 ---
 
 ## Tujuan
-(Tuliskan tujuan praktikum minggu ini.  
-Contoh: *Mahasiswa memahami konsep class dan object serta dapat membuat class Produk dengan enkapsulasi.*)
+Membuat arsitektur sistem Agri-POS menggunakan UML dan penerapan prinsip SOLID, untuk memenuhi kebutuhan siste. Dengan menguanaka tools (seperti Graphviz, StarUML, draw.io, PlantUML, Lucidchart, dan lain-lain) dengan ketemtuan dasar:
+1. Mengidentifikasi kebutuhan sistem ke dalam diagram UML.
+2. Menggambar UML Class Diagram dengan relasi antar class yang tepat.
+3. Menjelaskan prinsip desain OOP (SOLID).
+4. Menerapkan minimal dua prinsip SOLID dalam kode program.
+---
+
+## Deskripsi Sistem Agri-POS
+
+Agri-POS adalah sistem Point of Sale untuk penjualan produk pertanian (benih, pupuk, alat). Terdapat dua peran utama:
+
+* **gudang** → Mengelola produk dan laporan.
+* **Kasir** → Melakukan transaksi checkout dan pembayaran.
+* **admin** → Melakukan  pengawasan dan membuatkan akun.
+
+Kebutuhan Fungsional (FR) yang dicakup:
+
+* Manajemen Produk (CRUD)
+* Transaksi Penjualan (Checkout)
+* Pembayaran Tunai & E-Wallet
+* Pencetakan Struk
+* Login & Hak Akses
 
 ---
 
-## Dasar Teori
-(Tuliskan ringkasan teori singkat (3–5 poin) yang mendasari praktikum.  
-Contoh:  
-1. Class adalah blueprint dari objek.  
-2. Object adalah instansiasi dari class.  
-3. Enkapsulasi digunakan untuk menyembunyikan data.)
+## 1. Desain Arsitektur UML
+
+Empat diagram UML disusun untuk menggambarkan struktur dan perilaku sistem.
+
+### 1.1 Use Case Diagram
+
+* Menjelaskan fungsi sistem dari sudut pandang aktor.
+* Generalization digunakan pada metode pembayaran:
+
+  * **Bayar Tunai** dan **Bayar E-Wallet** adalah bentuk khusus dari **Proses Checkout**.
+* Include digunakan antara **Checkout** dan **Cetak Struk**.
+
+**Aktor & Use Case:**
+
+
+Admin : login, membuat akun, Lihat Laporan  
+Kasir : Login, Proses Checkout, Cetak Struk 
+gudang : login, kelola produk gudang
+
+![Usecase Diagram](screenshots/alldiagram-Use%20Case%20Diagram%20-%20Agri-POS.drawio.png)
+
+### 1.2 Activity Diagram – Proses Checkout
+
+* Menggambarkan alur kerja pembayaran.
+* Swimlanes: **Kasir**, **Sistem**, **Payment Gateway**.
+* Terdapat Decision Node untuk:
+
+  * Validasi stok
+  * Validasi saldo/uang
+
+![Activity Diagram 1](screenshots/alldiagram-activity%20check%20out.drawio.png)
+
+### 1.3 Activity Diagram – Proses kelola produk
+
+* Menggambarkan alur kerja penambahan dan pengurangan produk yang ada di gudang dan di toko.
+
+![Activity Diagram 2](screenshots/alldiagram-activity%20kelola%20produk.drawio.png)
+
+### 1.4 Sequence Diagram – Proses Pembayaran
+
+Menjelaskan interaksi antar objek:
+
+* CheckoutService meminta objek PaymentMethod dari PaymentFactory (OCP).
+* CheckoutService memanggil `pay()` pada interface PaymentMethod (LSP & DIP).
+* Blok **alt** untuk membedakan pembayaran Tunai vs E-Wallet.
+
+![Sequence Diagram](screenshots/alldiagram-squence%20pembayaran.drawio.png)
+
+### 1.5 Class Diagram
+
+* Struktur statis sistem.
+* Menggunakan interface dan dependency injection.
+* Kelas utama:
+
+  * CheckoutService
+  * ProductService
+  * PaymentMethod (Interface)
+  * CashPayment, EWalletPayment (Implementasi)
+  * PaymentFactory
+
+![Class Diagram](screenshots/alldiagram-class%20diagaram.drawio.png)
 
 ---
 
-## Langkah Praktikum
-(Tuliskan Langkah-langkah dalam prakrikum, contoh:
-1. Langkah-langkah yang dilakukan (setup, coding, run).  
-2. File/kode yang dibuat.  
-3. Commit message yang digunakan.)
+## 2. Penerapan Prinsip SOLID
 
+Desain Agri-POS menerapkan empat prinsip SOLID secara eksplisit.
+
+   - S - Single Responsibility Principle (SRP) Prinsip ini menyatakan bahwa satu kelas hanya boleh memiliki satu alasan untuk berubah atau satu tanggung jawab utama. Dalam sistem ini, tanggung jawab dipisahkan secara jelas di mana CheckoutService hanya fokus mengatur logika transaksi, sedangkan ProductRepository khusus menangani akses dan manipulasi data ke database.
+
+   - O - Open/Closed Principle (OCP) Entitas perangkat lunak harus terbuka untuk ekstensi (perluasan) tetapi tertutup untuk modifikasi. Penerapannya terlihat saat ingin menambah metode pembayaran baru (misalnya QRIS), pengembang cukup membuat kelas baru QrisPayment tanpa perlu mengubah atau membongkar kode lama di CheckoutService.
+
+   - L - Liskov Substitution Principle (LSP) Objek dari kelas turunan harus dapat menggantikan objek dari kelas induknya tanpa mengubah kebenaran program. Pada desain ini, CashPayment dan EWalletPayment merupakan turunan yang valid dan dapat digunakan kapan saja untuk menggantikan interface induknya, yaitu PaymentMethod, tanpa menyebabkan error.
+
+   - I - Interface Segregation Principle (ISP) Klien tidak boleh dipaksa untuk bergantung pada interface yang tidak mereka gunakan. Sistem menerapkan ini dengan membuat interface yang spesifik, yaitu PaymentMethod yang hanya berisi fungsi pembayaran dan ProductRepository yang hanya berisi fungsi pengelolaan data produk, sehingga tidak ada fungsi yang mubazir.
+
+   - D - Dependency Inversion Principle (DIP) Modul tingkat tinggi tidak boleh bergantung pada modul tingkat rendah, keduanya harus bergantung pada abstraksi. Hal ini diwujudkan dengan CheckoutService (tingkat tinggi) yang tidak bergantung langsung pada implementasi database konkret, melainkan bergantung pada interface ProductRepository (abstraksi).
 ---
 
-## Kode Program
-(Tuliskan kode utama yang dibuat, contoh:  
+## 3. Traceability Matrix (FR → Desain)
 
-```java
-// Contoh
-Produk p1 = new Produk("BNH-001", "Benih Padi", 25000, 100);
-System.out.println(p1.getNama());
-```
-)
+   - Manajemen Produk Fungsionalitas ini dipetakan pada Use Case "Kelola Produk" dan direalisasikan secara teknis oleh kolaborasi kelas ProductService, ProductRepository, dan entitas Product.
+
+   - Transaksi / Checkout Proses transaksi utama didefinisikan dalam Use Case "Proses Checkout" dengan alur kerja yang digambarkan pada Activity Diagram Checkout, serta diimplementasikan oleh kelas CheckoutService yang berinteraksi dengan ProductService.
+
+   - Pembayaran Fitur pembayaran (Tunai & E-Wallet) didetailkan interaksinya melalui Sequence Diagram Pembayaran dan direalisasikan menggunakan pola desain yang melibatkan PaymentFactory, interface PaymentMethod, serta kelas turunan CashPayment dan EWalletPayment.
+
+   - Cetak Struk Kebutuhan untuk mencetak bukti transaksi terintegrasi dalam alur Activity/Sequence Diagram Pembayaran dan diwujudkan dalam kode program melalui objek Receipt sebagai representasi struk belanja.
+
+   - Login / Akses Keamanan akses sistem dipetakan pada Use Case "Login", di mana proses autentikasi pengguna ditangani oleh layanan AuthService terhadap data entitas User.
+
 ---
+Berikut adalah jawaban untuk soal kuis serta kesimpulan desain sistem Agri-POS, disusun sesuai format yang Anda minta.
+Tentu, ini adalah variasi jawaban yang berbeda namun tetap mempertahankan esensi teknis dan format yang diminta. Penjelasan difokuskan pada pemahaman logika di balik konsep tersebut.
 
-## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
----
+## 4. Quiz & Argumentasi Desain
 
-## Analisis
-(
-- Jelaskan bagaimana kode berjalan.  
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Kendala yang dihadapi dan cara mengatasinya.  
-)
+### 1. Perbedaan Aggregation dan Composition + Contoh
+
+* **Aggregation:** Menggambarkan hubungan kepemilikan yang **terpisah secara siklus hidup**. Objek pendukung bisa berdiri sendiri walaupun objek induknya tidak ada.
+    * *Contoh:* **Gudang (Warehouse)** dan **Staf Gudang (Staff)**. Jika entitas gudang ditutup atau dihapus dari sistem, data staf tidak otomatis terhapus karena mereka bisa dipindahkan ke divisi lain.
+
+* **Composition:** Menggambarkan hubungan kepemilikan yang **saling terikat mati**. Objek bagian tidak memiliki makna atau eksistensi jika objek induknya musnah.
+    * *Contoh:* **Invoice** dan **ItemBelanja**. Jika sebuah Invoice dihapus, maka daftar ItemBelanja di dalamnya wajib dihapus, karena item tersebut tidak bisa berdiri sendiri tanpa nomor invoice yang menaunginya.
+
+### 2. Bagaimana OCP membuat sistem mudah dikembangkan?
+
+* **Menjamin stabilitas kode inti saat ada fitur baru.**
+    Prinsip ini mencegah fenomena "satu fitur tambah, dua fitur rusak". Kita bisa memperluas kemampuan aplikasi tanpa menyentuh *source code* yang sudah teruji valid.
+* **Contoh Implementasi:**
+    Ketika ingin menambahkan metode bayar **tranfer bank**, kita tidak perlu mengedit logika `CheckoutService`. Kita hanya perlu membuat *class* baru yang  menggunakan interface `PaymentMethod`.
+* **Dampak:** Menurunkan risiko *human error* pada fitur lama yang vital.
+
+### 3. Mengapa DIP meningkatkan testability?
+
+* **Isolasi logika bisnis dari infrastruktur luar.**
+    Modul utama sistem tidak terikat langsung (hard-coded) dengan database fisik, melainkan hanya "berbicara" melalui kontrak kerja (Interface).
+* **Kemudahan Simulasi (Mocking):**
+    Saat melakukan unit test pada `CheckoutService`, kita bisa mengganti koneksi database asli yang lambat dengan **Mock Repository** (objek tiruan di memori).
+* **Hasil:** Proses testing menjadi sangat cepat dan fokus hanya pada kebenaran logika, bukan pada masalah koneksi jaringan atau server database.
+
 ---
 
 ## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
 
----
+Berdasarkan analisis desain arsitektur Agri-POS, dapat disimpulkan bahwa:
 
-## Quiz
-(1. [Tuliskan kembali pertanyaan 1 dari panduan]  
-   **Jawaban:** …  
-
-2. [Tuliskan kembali pertanyaan 2 dari panduan]  
-   **Jawaban:** …  
-
-3. [Tuliskan kembali pertanyaan 3 dari panduan]  
-   **Jawaban:** …  )
+1.  **Pondasi yang Kokoh:** Integrasi diagram UML (Activity, Sequence, Class) memberikan visualisasi alur sistem yang jelas dari hulu (gudang) hingga hilir (pembayaran), memastikan tidak ada kebutuhan fungsional yang terlewat.
+2.  **Modularitas Tinggi:** Penerapan prinsip SOLID, terutama **Open/Closed Principle (OCP)** dan **Dependency Inversion Principle (DIP)**, menjadikan sistem ini sangat modular. Hal ini mempermudah tim pengembang untuk melakukan *maintenance* atau menambahkan fitur baru di masa depan tanpa merusak struktur yang ada.
+3.  **Kualitas Kode:** Dengan memisahkan tanggung jawab setiap kelas (SRP), kode menjadi lebih bersih, mudah dibaca, dan mudah diuji (*testable*), sehingga kualitas perangkat lunak tetap terjaga dalam jangka panjang.
