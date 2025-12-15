@@ -150,67 +150,60 @@ public class ShoppingCartMap {
 ---
 
 ## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
+  
+![Screenshot hasil](screenshots/week%207.png)
+
 ---
 
 ## Analisis
-(
+
 - Jelaskan bagaimana kode berjalan.  
 Program terdiri dari tiga class utama: Product, ShoppingCart, dan MainCart.
 
 1. Product
 
-Class sederhana yang menyimpan data produk:
+    Class sederhana yang menyimpan data produk:
 
-code
+    - code
+    - name
+    - price
 
-name
-
-price
-
-Objek produk dibuat dan datanya hanya bisa dibaca melalui getter.
+    Objek produk dibuat dan datanya hanya bisa dibaca melalui getter.
 
 2. ShoppingCart (ArrayList)
 
-Menggunakan ArrayList untuk menyimpan daftar produk.
+    Menggunakan ArrayList untuk menyimpan daftar produk.
 
-Fungsinya:
+    Fungsinya:
+    - addProduct() → menambah produk ke keranjang.
 
-addProduct() → menambah produk ke keranjang.
+    - removeProduct() → menghapus produk dari list.
 
-removeProduct() → menghapus produk dari list.
+    - getTotal() → menjumlahkan harga seluruh produk.
 
-getTotal() → menjumlahkan harga seluruh produk.
+    - printCart() → menampilkan isi keranjang dan total harganya.
 
-printCart() → menampilkan isi keranjang dan total harganya.
-
-ArrayList cocok untuk keranjang belanja sederhana karena mendukung duplikasi dan mudah ditambah/hapus.
+    ArrayList cocok untuk keranjang belanja sederhana karena mendukung duplikasi dan mudah ditambah/hapus.
 
 3. ShoppingCartMap (HashMap)
 
-Versi keranjang menggunakan Map<Product, Integer> untuk menyimpan produk beserta jumlahnya.
-
-addProduct() → jika produk sudah ada, jumlahnya ditambah.
-
-removeProduct() → jumlah dikurangi, dan dihapus jika 0.
-
-getTotal() → total harga dihitung dari harga × jumlah.
-
-printCart() → menampilkan produk + quantity.
+    - Versi keranjang menggunakan Map<Product, Integer> untuk menyimpan produk beserta jumlahnya.
+    - addProduct() → jika produk sudah ada, jumlahnya ditambah.
+    - removeProduct() → jumlah dikurangi, dan dihapus jika 0.
+    - getTotal() → total harga dihitung dari harga × jumlah.
+    - printCart() → menampilkan produk + quantity.
 
 4. MainCart
-Menjalankan program:
--Membuat dua produk.
+    Menjalankan program:
 
-- Membuat keranjang.
-- Menambah produk ke keranjang.
-- Menampilkan isi keranjang.
-- Menghapus satu produk dan mencetak ulang.
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Kendala yang dihadapi dan cara mengatasinya.  
-)
+    - Membuat dua produk.
+    - Membuat keranjang.
+    - Menambah produk ke keranjang.
+    - Menampilkan isi keranjang.
+    - Menghapus satu produk dan mencetak ulang.
+    - Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
+    - Kendala yang dihadapi dan cara mengatasinya.  
+
 ---
 
 ## Kesimpulan
@@ -257,7 +250,7 @@ Praktikum mempelajari penggunaan Java Collections seperti List dan Map untuk men
 
    Contoh:
    Dalam sistem kasir, kita ingin menyimpan produk → jumlahnya:
-   
+
    ```java
    Map<Product, Integer> cart = new HashMap<>();
    ```
