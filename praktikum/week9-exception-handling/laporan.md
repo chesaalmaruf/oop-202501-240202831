@@ -35,7 +35,7 @@ Langkah-langkah yang dilakukan dalam praktikum ini adalah:
 3. **Pembuatan Model**: Mengimplementasikan class `Product` yang memiliki atribut stok dan metode pengurangan stok.
 4. **Coding Logic**: Mengembangkan class `ShoppingCart` menggunakan `HashMap` untuk menyimpan item dan menyisipkan keyword `throws` pada metode yang berisiko.
 5. **Running & Testing**: Membuat class `MainExceptionDemo` untuk menguji berbagai skenario kesalahan dalam blok `try-catch`.
-6. **Commit**: Melakukan penyimpanan perubahan dengan pesan commit `week9-exception: [fitur] [deskripsi singkat]`.
+6. **Commit**: Melakukan penyimpanan perubahan dengan pesan commit `week9-exception: integrasi exception handling pada method tambahProduk, hapusProduk, dan checkout`.
 ---
 
 ## Kode Program
