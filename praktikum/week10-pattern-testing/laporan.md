@@ -171,6 +171,13 @@ public class ProductTest {
 
 ## Kesimpulan
 
+- Penerapan Singleton Pattern efektif untuk menjamin efisiensi penggunaan sumber daya, seperti pada koneksi database, dengan memastikan hanya ada satu instance yang tercipta di seluruh aplikasi.
+
+- Pola arsitektur MVC (Model-View-Controller) berhasil memisahkan tanggung jawab antara logika bisnis (Model), tampilan pengguna (View), dan penghubung antarmuka (Controller), sehingga kode menjadi lebih terorganisir dan mudah dipelihara.
+
+- Penggunaan Unit Testing dengan JUnit sangat penting untuk menjaga kualitas perangkat lunak karena memungkinkan deteksi kesalahan secara dini melalui pengujian komponen secara mandiri sebelum aplikasi dijalankan secara utuh.
+
+- Secara keseluruhan, kombinasi design pattern dan pengujian otomatis meningkatkan kepercayaan pengembang terhadap kode dan mempermudah proses pengembangan berkelanjutan.
 ---
 
 ## Quiz
