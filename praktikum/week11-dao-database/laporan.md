@@ -285,7 +285,3 @@ Praktikum ini berhasil membuktikan bahwa penggunaan pola DAO membuat kode aplika
 
 ---
 
-## Quiz
-1. Mengapa DAO dipisahkan dari class Model? Jawaban: Agar class Model fokus hanya sebagai representasi data (POJO), sedangkan DAO fokus pada logika operasional data ke database.
-
-2. Apa peran Driver Manager dalam JDBC? Jawaban: Driver Manager bertugas mengelola set driver JDBC yang tersedia dan memfasilitasi pembuatan koneksi antara aplikasi Java dan database berdasarkan URL yang diberikan.
